@@ -26,24 +26,16 @@ export default function Hero() {
         </p>
 
         {/* Call to Action Buttons */}
-        <div className="flex space-x-4">
-          <button className="bg-blue-700 text-white py-3 px-6 rounded-full hover:bg-blue-800 transition-all">
-            <Link
-              to="/submit-report"
-              className="hover:text-gray-900  no-underline text-white"
-            >
+        <Link
+          to="/submit-report"
+          className="hover:text-gray-900  no-underline text-white"
+        >
+          <div className="flex space-x-4">
+            <button className="bg-blue-700 text-white py-3 px-6 rounded-full hover:bg-blue-800 transition-all">
               Submit Report
-            </Link>
-          </button>
-          {/* <button className="border border-white text-white py-3 px-6 rounded-full hover:bg-white hover:text-gray-800 transition-all">
-            <Link
-              to="/submit-report"
-              className="hover:text-gray-900  no-underline text-white"
-            >
-              Submit Report
-            </Link>
-          </button> */}
-        </div>
+            </button>
+          </div>
+        </Link>
       </section>
     </div>
   );

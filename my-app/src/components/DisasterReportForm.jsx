@@ -6,7 +6,7 @@ export default function DisasterReportForm({ addReport, loading }) {
   // New State Fields
   const [disasterType, setDisasterType] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [isSubmitting, ] = useState(false);
+  const [isSubmitting] = useState(false);
 
   // Original State Fields
   const [reporterName, setReporterName] = useState("");
@@ -49,7 +49,7 @@ export default function DisasterReportForm({ addReport, loading }) {
         console.error("Error loading provider or contract:", error);
       }
     };
- 
+
     loadContract();
   }, [contractAddress]);
 
@@ -79,8 +79,6 @@ export default function DisasterReportForm({ addReport, loading }) {
       console.error("Error adding person:", error);
     }
   };
-
-
 
   const getCoordinates = () => {
     if (navigator.geolocation) {
@@ -117,7 +115,7 @@ export default function DisasterReportForm({ addReport, loading }) {
             required
             type="text"
             className="w-full bg-gray-100 p-3 border border-gray-300 rounded-lg"
-            placeholder="Enter the your name"
+            placeholder="Enter your name"
           />
         </div>
 
@@ -127,6 +125,7 @@ export default function DisasterReportForm({ addReport, loading }) {
             Email
           </label>
           <input
+            placeholder="Enter you email address"
             onChange={(e) => setEmail(e.target.value)}
             required
             type="email"
@@ -160,7 +159,7 @@ export default function DisasterReportForm({ addReport, loading }) {
             Image Url
           </label>
           <input
-            placeholder=""
+            placeholder="Enter disaster image url"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             className="w-full bg-gray-100 p-3 border border-gray-300 rounded-lg"
@@ -174,6 +173,7 @@ export default function DisasterReportForm({ addReport, loading }) {
               Latitude
             </label>
             <input
+              placeholder="Latitude"
               type="text"
               value={latitude}
               onChange={(e) => setLatitude(e.target.value)}
@@ -185,6 +185,7 @@ export default function DisasterReportForm({ addReport, loading }) {
               Longitude
             </label>
             <input
+              placeholder="Longitude"
               type="text"
               value={longitude}
               onChange={(e) => setLongitude(e.target.value)}
@@ -206,6 +207,7 @@ export default function DisasterReportForm({ addReport, loading }) {
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2">City</label>
           <input
+            placeholder="City"
             type="text"
             onChange={(e) => setCity(e.target.value)}
             required
@@ -219,6 +221,7 @@ export default function DisasterReportForm({ addReport, loading }) {
             State
           </label>
           <input
+            placeholder="State"
             type="text"
             onChange={(e) => setState(e.target.value)}
             required
@@ -260,6 +263,7 @@ export default function DisasterReportForm({ addReport, loading }) {
             Impact
           </label>
           <textarea
+            placeholder="Describe the situation"
             onChange={(e) => setImpact(e.target.value)}
             required
             className="w-full bg-gray-100 p-3 border border-gray-300 rounded-lg"

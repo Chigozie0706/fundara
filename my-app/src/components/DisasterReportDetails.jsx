@@ -9,6 +9,7 @@ const DisasterReportDetails = () => {
   const { id } = useParams();
   const [report, setReport] = useState(null);
   const [disasterReportImages, setDisasterReportImages] = useState(null);
+  const [contract, setContract] = useState(null);
 
   // useCallback to memoize fetchDisasterReport
   const fetchDisasterReport = useCallback(async () => {
@@ -21,6 +22,7 @@ const DisasterReportDetails = () => {
         signer
       );
 
+      setContract(contract);
       // Fetch the disaster report by the id
       const disasterReport = await contract.getDisasterReport(id);
       setReport(disasterReport);
@@ -35,12 +37,27 @@ const DisasterReportDetails = () => {
     } catch (error) {
       console.error("Error fetching disaster report:", error);
     }
-  }, [id]); 
-
+  }, [id]);
 
   useEffect(() => {
     fetchDisasterReport();
   }, [fetchDisasterReport]);
+
+  const deleteImage = async (id, index) => {
+    try {
+      if (!contract) {
+        throw new Error("Contract not loaded");
+      }
+
+      // Call the contract method to add a person
+      const tx = await contract.deleteDisasterImage(id, index);
+      await tx.wait(); // Wait for the transaction to be mined
+      console.log("Person added successfully:", tx);
+      fetchDisasterReport();
+    } catch (error) {
+      console.error("Error adding person:", error);
+    }
+  };
 
   if (!report) {
     return <div>Loading...</div>;
@@ -104,12 +121,19 @@ const DisasterReportDetails = () => {
               {" "}
               {/* Adjust grid layout as needed */}
               {disasterReportImages.map((url, index) => (
-                <img
-                  key={index}
-                  src={url}
-                  alt={`Disaster  ${index + 1}`}
-                  className="w-full h-auto object-cover"
-                />
+                <div key={index} className="relative">
+                  <img
+                    src="/delete.png" // Replace with the path to your delete icon image
+                    alt="Delete"
+                    className="absolute top-2 right-2 w-8 h-8 cursor-pointer hover:opacity-80"
+                    onClick={() => deleteImage(id, index)}
+                  />
+                  <img
+                    src={url}
+                    alt={`Disaster  ${index + 1}`}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
               ))}
             </div>
           ) : (
