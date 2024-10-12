@@ -80,10 +80,7 @@ export default function DisasterReportForm({ addReport, loading }) {
     }
   };
 
-  // Handle Image Upload
-//   const handleImageUpload = (e) => {
-//     setImage(e.target.files[0]);
-//   };
+
 
   const getCoordinates = () => {
     if (navigator.geolocation) {
