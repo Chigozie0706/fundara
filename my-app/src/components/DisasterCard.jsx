@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import contractABI from "../contract/abi.json";
 import { ethers } from "ethers";
-import { Container } from "reactstrap";
+import { Container, Spinner } from "reactstrap";
 import { Link } from "react-router-dom";
 import { identiconTemplate } from "../helpers/index.tsx";
 
@@ -126,7 +126,10 @@ export default function DisasterCard() {
           ))}
         </div>
       ) : (
-        <p>Loading disaster reports...</p>
+        <div className="text-center mt-5">
+          <Spinner color="primary" />
+          <p>Loading disaster reports...</p>
+        </div>
       )}
     </Container>
   );

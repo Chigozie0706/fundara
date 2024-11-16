@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import contractABI from "../contract/abi.json";
 import { ethers } from "ethers";
+import { useNavigate } from "react-router-dom";
 
 export default function DisasterReportForm({ addReport, loading }) {
   // New State Fields
@@ -21,6 +22,8 @@ export default function DisasterReportForm({ addReport, loading }) {
   const [impact, setImpact] = useState("");
   const [, setAccount] = useState(null);
   const [contract, setContract] = useState(null);
+
+  const navigate = useNavigate();
 
   const contractAddress = "0xa0525F3DEb64384FD3d07bbb7377191a0C3ddcD0";
 
@@ -75,6 +78,7 @@ export default function DisasterReportForm({ addReport, loading }) {
       );
       await tx.wait(); // Wait for the transaction to be mined
       console.log("Person added successfully:", tx);
+      navigate("/disaster-report");
     } catch (error) {
       console.error("Error adding person:", error);
     }

@@ -4,6 +4,7 @@ import MapComponent from "./MapComponent";
 import { useParams } from "react-router-dom";
 import contractABI from "../contract/abi.json";
 import DisasterImageModal from "./DisasterImageModal";
+import { Spinner } from "reactstrap";
 
 const DisasterReportDetails = () => {
   const { id } = useParams();
@@ -60,7 +61,12 @@ const DisasterReportDetails = () => {
   };
 
   if (!report) {
-    return <div>Loading...</div>;
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <Spinner color="primary" />
+        <p className="text-center">Loading disaster report...</p>
+      </div>
+    );
   }
 
   return (

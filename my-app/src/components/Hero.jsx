@@ -19,10 +19,12 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl max-w-2xl mb-8">
-          Fundara is a disaster refund platform on the Arbitrum network,
-          providing fast, transparent, and secure fund distribution through
-          blockchain technology, ensuring efficient relief for affected
-          communities.
+          Fundara improves disaster response with a secure, transparent platform
+          for managing disaster information. Using blockchain technology, it
+          ensures data integrity and accessibility, enabling authorities and
+          relief organizations to make informed decisions and coordinate
+          effectively while promoting transparency and accountability in
+          disaster management.
         </p>
 
         {/* Call to Action Buttons */}
