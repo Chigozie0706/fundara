@@ -105,6 +105,7 @@ The application will be available at `http://localhost:3000`
 
 ## Links
 
-GitHub Repository: [https://github.com/Chigozie0706/fundara](https://github.com/Chigozie0706/fundara)
-Live Project: [https://fundara.vercel.app/](https://fundara.vercel.app/)
-Smart Contract Address: [0xa0525F3DEb64384FD3d07bbb7377191a0C3ddcD0](https://sepolia.arbiscan.io/address/0xa0525F3DEb64384FD3d07bbb7377191a0C3ddcD0)
+- Video Demo: [https://www.loom.com/share/165f4742350f4a5586a124fa503caf2c](https://www.loom.com/share/165f4742350f4a5586a124fa503caf2c)
+- GitHub Repository: [https://github.com/Chigozie0706/fundara](https://github.com/Chigozie0706/fundara)
+- Live Project: [https://fundara.vercel.app/](https://fundara.vercel.app/)
+- Smart Contract Address: [0xa0525F3DEb64384FD3d07bbb7377191a0C3ddcD0](https://sepolia.arbiscan.io/address/0xa0525F3DEb64384FD3d07bbb7377191a0C3ddcD0)
